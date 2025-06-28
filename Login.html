@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login & Sign Up</title>
+  
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url('images/Background.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      gap: 50px;
+      padding: 40px;
+    }
+
+    .form-box {
+      background: linear-gradient(to bottom right, #35afce, #022435);
+      padding: 40px;
+      border-radius: 20px;
+      width: 600px;
+      color: white;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .form-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 30px;
+      font-family: 'Arial Black', sans-serif;
+    }
+
+    .form-box .icon {
+      font-size: 40px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .input-box {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 30px;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      color: #777;
+    }
+
+    .input-box input {
+      border: none;
+      outline: none;
+      flex: 1;
+      padding: 10px;
+      font-size: 15px;
+      font-style: italic;
+      background: transparent;
+      color: #333;
+    }
+
+    .input-box i {
+      margin-right: 10px;
+      color: #007c8f;
+      font-size: 18px;
+    }
+
+    .double-input {
+      display: flex;
+      gap: 10px;
+    }
+
+    .double-input .input-box {
+      flex: 1;
+    }
+
+    .checkbox {
+      display: flex;
+      font-size: 12px;
+      margin-bottom: 20px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .checkbox input {
+      margin-right: 10px;
+    }
+
+    .form-box button {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(to right, #6eaec5);
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-box button:hover {
+      background: rgb(174, 204, 218); 
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- LOGIN FORM -->
+	<div class="form-box">
+	  <div class="icon"><i class="fas fa-user-circle"></i></div>
+	  <h2>LOG IN</h2>
+	  <div class="input-box">
+		<i class="fas fa-user"></i>
+		<input type="text" id="login-username" placeholder="Username">
+	  </div>
+	  <div class="input-box">
+		<i class="fas fa-lock"></i>
+		<input type="password" id="login-password" placeholder="Password">
+	  </div>
+	  <button onclick="handleLogin()">Log In</button>
+	  <button onclick="window.location.href='Home.html'" style="margin-top: 10px; background-color: gray; color: white;">
+	   Kembali ke Home
+   </button>
+	  <!-- Login.html - tambahkan di form login -->
+	  <div style="text-align: center; margin-top: 15px;">
+		<a href="#" onclick="handleForgotPassword()" style="color: #8ee0fc; text-decoration: none;">Lupa Password?</a>
+	  </div>
+	</div>
+
+	<!-- SIGN UP FORM -->
+	<div class="form-box">
+	  <div class="icon"><i class="fas fa-user-circle"></i></div>
+	  <h2>SIGN UP</h2>
+	  <div class="input-box">
+		<input type="text" id="signup-name" placeholder="Name">
+	  </div>
+	  <div class="input-box">
+		<input type="email" id="signup-email" placeholder="E-Mail">
+	  </div>
+	  <div class="double-input">
+		<div class="input-box">
+		  <input type="password" id="signup-password" placeholder="Password">
+		</div>
+		<div class="input-box">
+		  <input type="password" id="signup-confirm" placeholder="Confirm Password">
+		</div>
+	  </div>
+	  <div class="input-box">
+		<i class="fas fa-user-tag"></i>
+		<select id="signup-role" style="border: none; outline: none; background: transparent; color: #333; font-style: italic; flex: 1;">
+		  <option value="" disabled selected> Daftar Sebagai: </option>
+		  <option value="patient">Pasien</option>
+		  <option value="doctor">Dokter</option>
+		</select>
+	  </div>
+	  <div class="checkbox">
+		<input type="checkbox" id="terms">
+		<label for="terms">I agree to the Terms & Conditions</label>
+	  </div>
+	  <button onclick="handleSignup()">Create Account</button>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+</html>
