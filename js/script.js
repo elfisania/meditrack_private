@@ -125,9 +125,9 @@ function handleLogin() {
         } else {
             if (window.location.pathname.includes('Home_Dokter')) {
                 alert('Anda tidak memiliki akses ke halaman dokter');
-                window.location.href = 'Home.html';
+                window.location.href = 'index.html';
             } else {
-                window.location.href = 'Home.html';
+                window.location.href = 'index.html';
             }
         }
         setTimeout(() => notif.remove(), 10000);
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navigation
     document.getElementById('nav-home')?.addEventListener('click', function(e) {
         e.preventDefault();
-        window.location.href = 'Home.html';
+        window.location.href = 'index.html';
     });
 
     document.getElementById('nav-about')?.addEventListener('click', function(e) {
